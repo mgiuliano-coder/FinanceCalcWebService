@@ -1,6 +1,7 @@
 package com.mgcoder.financecalcws.entities;
 
 import javafx.animation.ScaleTransition;
+import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
 
@@ -8,17 +9,19 @@ import javax.persistence.*;
 public class Asset {
     @Id
     private Integer id;
+    private Integer userId;
     private String description;
     private Integer categoryId;
     private Double amountSpent;
     private Double currentValue;
 
     public Asset() {
-        this(0, null, null, null, null);
+        this(0, 0, null, null, null, null);
     }
 
-    public Asset(Integer id, String description, Double amountSpent, Double currentValue, Integer categoryId) {
+    public Asset(@NonNull Integer id, @NonNull Integer userId, String description, Double amountSpent, Double currentValue, Integer categoryId) {
         this.id = id;
+        this.userId = userId;
         this.description = description;
         this.categoryId = categoryId;
         this.amountSpent = amountSpent;
@@ -29,8 +32,16 @@ public class Asset {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(@NonNull Integer id) {
         this.id = id;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(@NonNull Integer userId) {
+        this.userId = userId;
     }
 
     public String getDescription() {

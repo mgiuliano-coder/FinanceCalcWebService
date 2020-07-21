@@ -1,15 +1,17 @@
 package com.mgcoder.financecalcws.services;
 
+import org.springframework.lang.NonNull;
+
 import java.util.List;
 
 public interface FinanceService<E, I> {
-    List<E> getAll();
+    List<E> getAll(I userId);
 
-    E getById(I id);
+    E getById(@NonNull I id, @NonNull I userId);
 
-    void update(I id, E object);
+    void update(@NonNull I id, E object);
 
-    void delete(I id);
+    void delete(@NonNull I id);
 
     void add(E object);
 }

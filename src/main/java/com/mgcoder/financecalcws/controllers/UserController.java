@@ -3,6 +3,7 @@ package com.mgcoder.financecalcws.controllers;
 import com.mgcoder.financecalcws.entities.User;
 import com.mgcoder.financecalcws.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,18 +20,18 @@ public class UserController {
     }
 
     @RequestMapping("/users/r/{id}")
-    public User getUserById(@PathVariable Integer id) {
+    public User getUserById(@NonNull @PathVariable Integer id) {
         return userService.getById(id);
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "/users/u/{id}")
-    public void updateUser(@PathVariable Integer id, @RequestBody User user) {
+    public void updateUser(@NonNull @PathVariable Integer id, @RequestBody User user) {
         user.setId(id);
         userService.update(id, user);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/users/d/{id}")
-    public void deleteUser(@PathVariable Integer id) {
+    public void deleteUser(@NonNull @PathVariable Integer id) {
         userService.delete(id);
     }
 

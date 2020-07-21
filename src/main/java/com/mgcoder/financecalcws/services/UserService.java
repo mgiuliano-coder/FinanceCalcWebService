@@ -3,11 +3,12 @@ package com.mgcoder.financecalcws.services;
 import com.mgcoder.financecalcws.entities.User;
 import com.mgcoder.financecalcws.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 import java.util.*;
 
 @Service
-public class UserService implements FinanceService<User, Integer> {
+public class UserService {
 
     @Autowired
     private UserRepository userRepository;
@@ -18,16 +19,16 @@ public class UserService implements FinanceService<User, Integer> {
         return users;
     }
 
-    public User getById(Integer id) {
+    public User getById(@NonNull Integer id) {
         return userRepository.findById(id).get();
     }
 
-    public void update(Integer id, User user) {
+    public void update(@NonNull Integer id, User user) {
         if(userRepository.existsById(id))
             userRepository.save(user);
     }
 
-    public void delete(Integer id) {
+    public void delete(@NonNull Integer id) {
         userRepository.deleteById(id);
     }
 

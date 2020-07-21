@@ -1,21 +1,25 @@
 package com.mgcoder.financecalcws.entities;
 
+import org.springframework.lang.NonNull;
+
 import javax.persistence.*;
 
 @Entity
 public class Income {
     @Id
     private Integer id;
+    private Integer userId;
     private String description;
     private Integer categoryId;
     private Double amount;
 
     public Income() {
-        this(0, null, null, null);
+        this(0, 0, null, null, null);
     }
 
-    public Income(Integer id, String description, Double amount, Integer categoryId) {
+    public Income(@NonNull Integer id, @NonNull Integer userId, String description, Double amount, Integer categoryId) {
         this.id = id;
+        this.userId = userId;
         this.description = description;
         this.categoryId = categoryId;
         this.amount = amount;
@@ -25,8 +29,16 @@ public class Income {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(@NonNull Integer id) {
         this.id = id;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(@NonNull Integer userId) {
+        this.userId = userId;
     }
 
     public String getDescription() {
@@ -45,11 +57,11 @@ public class Income {
         this.categoryId = categoryId;
     }
 
-    public double getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 }

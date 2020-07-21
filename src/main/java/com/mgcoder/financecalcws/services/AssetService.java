@@ -3,6 +3,7 @@ package com.mgcoder.financecalcws.services;
 import com.mgcoder.financecalcws.entities.Asset;
 import com.mgcoder.financecalcws.repositories.AssetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,22 +14,22 @@ public class AssetService implements FinanceService<Asset, Integer> {
     @Autowired
     private AssetRepository assetRepository;
 
-    public List<Asset> getAll() {
+    public List<Asset> getAll(@NonNull Integer userId) {
         List<Asset> assets = new ArrayList<>();
-        assetRepository.findAll().forEach(assets::add);
+        assetRepository.findAll(userId).forEach(assets::add);
         return assets;
     }
 
-    public Asset getById(Integer id) {
-        return assetRepository.findById(id).get();
+    public Asset getById(@NonNull Integer id, @NonNull Integer userId) {
+        return assetRepository.findById(id, userId).get();
     }
 
-    public void update(Integer id, Asset asset) {
+    public void update(@NonNull Integer id, Asset asset) {
         if(assetRepository.existsById(id))
             assetRepository.save(asset);
     }
 
-    public void delete(Integer id) {
+    public void delete(@NonNull Integer id) {
         assetRepository.deleteById(id);
     }
 
