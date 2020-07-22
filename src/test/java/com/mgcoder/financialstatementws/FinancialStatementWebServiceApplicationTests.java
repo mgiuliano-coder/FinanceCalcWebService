@@ -1,10 +1,10 @@
-package com.mgcoder.financecalcws;
+package com.mgcoder.financialstatementws;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FinanceCalcWebServiceApplicationTests {
+class FinancialStatementWebServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

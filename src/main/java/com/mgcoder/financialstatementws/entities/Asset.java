@@ -1,6 +1,5 @@
-package com.mgcoder.financecalcws.entities;
+package com.mgcoder.financialstatementws.entities;
 
-import javafx.animation.ScaleTransition;
 import org.springframework.lang.NonNull;
 
 import javax.persistence.*;

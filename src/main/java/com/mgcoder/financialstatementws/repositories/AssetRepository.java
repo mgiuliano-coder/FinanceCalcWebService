@@ -1,6 +1,6 @@
-package com.mgcoder.financecalcws.repositories;
+package com.mgcoder.financialstatementws.repositories;
 
-import com.mgcoder.financecalcws.entities.Asset;
+import com.mgcoder.financialstatementws.entities.Asset;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;

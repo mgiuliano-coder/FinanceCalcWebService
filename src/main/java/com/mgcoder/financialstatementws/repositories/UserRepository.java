@@ -1,6 +1,6 @@
-package com.mgcoder.financecalcws.repositories;
+package com.mgcoder.financialstatementws.repositories;
 
-import com.mgcoder.financecalcws.entities.User;
+import com.mgcoder.financialstatementws.entities.User;
 import org.springframework.data.repository.CrudRepository;
 
 public interface UserRepository extends CrudRepository<User, Integer> {

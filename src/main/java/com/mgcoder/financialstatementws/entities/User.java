@@ -1,4 +1,4 @@
-package com.mgcoder.financecalcws.entities;
+package com.mgcoder.financialstatementws.entities;
 
 import org.springframework.lang.NonNull;
 

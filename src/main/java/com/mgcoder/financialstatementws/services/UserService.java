@@ -1,7 +1,7 @@
-package com.mgcoder.financecalcws.services;
+package com.mgcoder.financialstatementws.services;
 
-import com.mgcoder.financecalcws.entities.User;
-import com.mgcoder.financecalcws.repositories.UserRepository;
+import com.mgcoder.financialstatementws.entities.User;
+import com.mgcoder.financialstatementws.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;

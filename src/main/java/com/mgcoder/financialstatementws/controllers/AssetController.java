@@ -1,7 +1,7 @@
-package com.mgcoder.financecalcws.controllers;
+package com.mgcoder.financialstatementws.controllers;
 
-import com.mgcoder.financecalcws.entities.Asset;
-import com.mgcoder.financecalcws.services.AssetService;
+import com.mgcoder.financialstatementws.entities.Asset;
+import com.mgcoder.financialstatementws.services.AssetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;

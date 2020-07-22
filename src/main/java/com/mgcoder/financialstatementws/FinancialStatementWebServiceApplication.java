@@ -1,13 +1,13 @@
-package com.mgcoder.financecalcws;
+package com.mgcoder.financialstatementws;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FinanceCalcWebServiceApplication {
+public class FinancialStatementWebServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FinanceCalcWebServiceApplication.class, args);
+		SpringApplication.run(FinancialStatementWebServiceApplication.class, args);
 	}
 
 }
